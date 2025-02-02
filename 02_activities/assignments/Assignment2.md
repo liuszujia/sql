@@ -14,10 +14,10 @@
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment-two`.
-- [ ] Ensure that the repository is public.
-- [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
-- [ ] Verify that the link is accessible in a private browser window.
+- [x] Create a branch called `assignment-two`.
+- [x] Ensure that the repository is public.
+- [x] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
+- [x] Verify that the link is accessible in a private browser window.
 
 If you encounter any difficulties or have questions, please don't hesitate to reach out to our team via our Slack. Our Technical Facilitators and Learning Support staff are here to help you navigate any challenges.
 
@@ -45,8 +45,12 @@ There are several tools online you can use, I'd recommend [Draw.io](https://www.
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
 
+<img src="./images/Assignment2-Section1-Prompt1.png" width="400">
+
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
+
+<img src="./images/Assignment2-Section1-Prompt2.png" width="400">
 
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
@@ -54,7 +58,27 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1: overwrite - only the current address is stored
+Table: 
+    customer_address
+Columns: 
+    address_id
+    customer_id
+    address
+    last_updated
+
+Type 2: add new row - both the current and historical address are stored
+Table: 
+    customer_address
+Columns: 
+    address_id
+    customer_id
+    address
+    version
+    start_date
+    end_date
+    is_current
+    
 ```
 
 ***
@@ -182,5 +206,10 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
+Despite the massive datasets required to train AI systems, the extensive human labour behind them often remains invisible and underpaid. For example, image-based CAPTCHAs ask users to identify objects in images, such as cars, crosswalks, and traffic lights. The labels provided by these human inputs are then used to improve AI algorithms. While this approach is effective, it raises significant ethical concerns about consent and transparency. Users are often unaware that their input is being used to train AI systems, and they are not compensated for their contributions. 
+
+Moreover, since AI models are shaped by human labour, social biases can easily become embedded in these systems. A study by MIT researchers revealed significant inequities in the accuracy of gender classification algorithms, particularly for darker-skinned females, who were misclassified at rates as high as 34.7%. In contrast, the error rate for lighter-skinned males was only 0.8%. These discrepancies highlight how the lack of diverse and representative training data for underrepresented groups leads to biased AI outcomes.
+
+To address these issues, it is crucial to prioritize transparency and fairness in AI development. This includes acknowledging the human labour involved in creating AI systems, as well as ensuring diverse and inclusive datasets. Specifically, developers should obtain explicit consent from those whose data is used to train AI models and offer compensation for their contributions. It is also important to aim for diversity and inclusion in training datasets to avoid perpetuating existing social inequalities. Ultimately, AI should benefit society as a whole, rather than privileging specific groups. 
+
 ```
