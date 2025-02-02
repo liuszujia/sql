@@ -36,7 +36,8 @@ HINT: One of these approaches uses ROW_NUMBER() and one uses DENSE_RANK(). */
 
 SELECT 
 customer_id, market_date, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY market_date ASC, transaction_time ASC)
-FROM customer_purchases;
+FROM customer_purchases
+GROUP BY customer_id, market_date; --to get the unique combinations of customer_id and market_date
 
 /* 2. Reverse the numbering of the query from a part so each customer’s most recent visit is labeled 1, 
 then write another query that uses this one as a subquery (or temp table) and filters the results to 
@@ -185,7 +186,12 @@ VALUES (24, 'Orange', 'large', 1, 'unit', CURRENT_TIMESTAMP);
 HINT: If you don't specify a WHERE clause, you are going to have a bad time.*/
 
 DELETE FROM product_units
-WHERE product_id = 24;
+WHERE (product_id, snapshot_timestamp) NOT IN 
+	(
+    SELECT product_id, MAX(snapshot_timestamp) --to ensure we are keeping the latest record
+    FROM product_units
+    GROUP BY product_id
+	);
 
 -- UPDATE
 /* 1.We want to add the current_quantity to the product_units table. 
