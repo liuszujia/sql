@@ -14,10 +14,10 @@
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment-one`.
-- [ ] Ensure that the repository is public.
-- [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
-- [ ] Verify that the link is accessible in a private browser window.
+- [x] Create a branch called `assignment-one`.
+- [x] Ensure that the repository is public.
+- [x] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
+- [x] Verify that the link is accessible in a private browser window.
 
 If you encounter any difficulties or have questions, please don't hesitate to reach out to our team via our Slack. Our Technical Facilitators and Learning Support staff are here to help you navigate any challenges.
 
@@ -57,12 +57,12 @@ There are 10 tables in the Main Window:
 2) customer
 3) customer_purchases
 4) market_date_info
-5) product
-6) product_category
-7) vendor
-8) vendor_booth_assignments
-9) vendor_inventory
-10) zip_data
+5) postal_data
+6) product
+7) product_category
+8) vendor
+9) vendor_booth_assignments
+10) vendor_inventory
 
 Switch to the Browse Data tab, booth is selected by default
 
@@ -105,6 +105,8 @@ Please do not pick the exact same tables that I have already diagrammed. For exa
 	- These are the tables that are connected
 	- <img src="./images/01_farmers_market_conceptual_model.png" width="600">
 - The column names can be found in a few spots (DB Schema window in the bottom right, the Database Structure tab in the main window by expanding each table entry, at the top of the Browse Data tab in the main window)
+
+<img src="./images/Assignment1-Section1.png" width="400">
 
 ***
 
@@ -205,5 +207,7 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+In most applications, data systems are constructed with the interest of achieving broad applicability so that a wider audience group could be attracted. However, it is not uncommon that such systems would inevitably contain biases from their creators and the societies they emerge from. One example is the beauty camera apps on cell phones, the majority of which are made in developed nations. As a result, their algorithms are trained on a database that is dominated by Western demographics, likely because of the availability of data. Therefore, those apps "forcibly" adopt Western beauty standards such as fair skin, large eyes, and slim noses. Evidently, users whose demographic is not well-represented in the training data are likely to experience subpar performance; for example, their facial features might be distorted or fail to be enhanced in a way that aligns with their beauty standards. Consequently, these users will likely find the apps challenging to explore, and eventually abandon such platforms. As they quit the beauty camera apps, the diversity of the app’s user base is further reduced, discouraging the developers from improving their apps by incorporating more datasets from the underrepresented groups. In order to break the cycles, the designers need to take the initiative to collect training data for those smaller groups for more sophisticated experiences. While it will be challenging initially due to the greater expenses associated with the data collection process, as more users from underrepresented groups join the community, the availability of training data increases. By taking all user groups into account, both the marginalized users and the technological development will benefit. 
+
 ```
+
